@@ -20,7 +20,7 @@ Run this command to start the app:
 Visit `0.0.0.0:5000` on your web browser
 
 
-Built with ♥ by [`Anastasiia Vashchuk`](http://www.omkarpathak.in/)
+Built with ♥ by `Anastasiia Vashchuk`
 
 # Results
 
