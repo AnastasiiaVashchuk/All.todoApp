@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>All.todo</title>
+        <link rel='stylesheet' href='{{ url_for("static", filename="css/bootstrap.min.css") }}'>
+        <link rel='stylesheet' href='{{ url_for("static", filename="css/checkbox.css") }}'>
+        <link rel='stylesheet' href='{{ url_for("static", filename="css/base.css") }}'>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        &lt TODO &gt
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" id="navbar-links">
+                        {% if username %}
+                            <li>
+                                <a href="/tasks/add/">NEW TASK</a>
+                            </li>
+                            <li>
+                                <a href="/tasks/">ALL TASKS</a>
+                            </li>
+                            <li>
+                                <a href="/projects/add/">NEW PROJECT</a>
+                            </li>
+                            <li>
+                                <a href="/projects/">ALL PROJECTS</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if username %}
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    Welcome, {{ username }} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/settings/" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-cog"></span> Profile Settings
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/settings/change_password/" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-wrench"></span>
+                                            Update Password
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/logout/" class="dropdown-item">
+                                            <span class="glyphicon glyphicon-log-out"></span> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li><a href="/signup/"><span class="glyphicon glyphicon-user"></span> Sign Up </a></li>
+                            <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="add-margin-top"></div>
+        {% block content %}
+
+        {% endblock %}
+        <div class="add-margin-bottom"></div>
+        <div class="container inline-p">
+            <legend></legend>
+            <h4>
+                <p>&copy; 2020 Anastasiia Vashchuk</p>
+            </h4>
+        </div>
+    </body>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/typed.min.js') }}"></script>
+    <script type="text/javascript">
+        var typed3 = new Typed('.element', {
+           strings: ['All.todo', ''],
+           typeSpeed: 100,
+           backSpeed: 100,
+           smartBackspace: true, // this is a default
+           loop: true,
+         });
+    </script>
+
+</html>

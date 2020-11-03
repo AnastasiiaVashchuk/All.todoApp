@@ -1,0 +1,44 @@
+.new-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 16px;
+    width: 16px;
+    background: rgb(239, 239, 239);
+    margin-right: 10px;
+}
+
+.base-items {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.new-card-title {
+
+}
+
+.checkmark {
+    display: none;
+    height: 12px;
+    width: 12px;
+}
+
+.new-checkbox.checked {
+    background: #337ab7;
+}
+
+.new-checkbox.checked .checkmark {
+    display: block;
+}
+
+.new-checkbox.completed {
+    background: #337ab7;
+}
+
+.new-checkbox.completed .checkmark {
+    display: block;
+}
+
