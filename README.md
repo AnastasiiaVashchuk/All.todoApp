@@ -7,7 +7,7 @@ Execute the following command to install the required third party libraries:<br 
 # Usage:
 Clone this repository:
 
-`git clone https://github.com/`
+`git clone https://github.com/AnastasiiaVashchuk/All.todoWebApp`
 
 Install the dependencies by simply executing:
 
